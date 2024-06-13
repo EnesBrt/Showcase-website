@@ -3,6 +3,7 @@ from django.db import models
 from wagtail.models import Page
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 
 class HomePage(Page):
@@ -16,7 +17,7 @@ class HomePage(Page):
         related_name="+",
     )
 
-    landing_section_text = models.CharField(max_length=255, blank=True)
+    landing_section_text = RichTextField(blank=True)
 
     # About section of the single page website
     about_us_section_title = models.CharField(max_length=255, blank=True)
@@ -24,7 +25,7 @@ class HomePage(Page):
 
     # Services section of the single page website
     services_section_title = models.CharField(max_length=255, blank=True)
-    services_section_text = models.TextField(blank=True)
+    services_section_text = RichTextField(blank=True)
     services_image_section = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
@@ -37,7 +38,7 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
-                FieldPanel("landing_image_section"),
+                ImageChooserPanel("landing_image_section"),
                 FieldPanel("landing_section_text"),
             ],
             heading="Landing Section",
