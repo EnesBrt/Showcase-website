@@ -20,7 +20,7 @@ class HomePage(Page):
 
     # About section of the single page website
     about_us_section_title = models.CharField(max_length=255, blank=True)
-    about_ussection_text = RichTextField(blank=True)
+    about_us_section_text = RichTextField(blank=True)
 
     # Services section of the single page website
     services_section_title = models.CharField(max_length=255, blank=True)
