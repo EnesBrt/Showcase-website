@@ -11,7 +11,7 @@ class HomePage(Page):
     landing_image_section = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
-        blank=False,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
     )
@@ -28,7 +28,7 @@ class HomePage(Page):
     services_image_section = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
-        blank=False,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name="+",
     )
