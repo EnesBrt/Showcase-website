@@ -33,12 +33,16 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-
+    
+        {# Add your header template to your base template: #}
+        {% include "includes/header.html" %}
+    
         {% block content %}{% endblock %}
-
+    
         {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/showcase_website.js' %}"></script>
-
+    
+        <script type="text/javascript" src="{% static 'js/mysite.js' %}"></script>
+    
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
