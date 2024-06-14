@@ -2,7 +2,6 @@ from django.db import models
 
 from wagtail.models import Page
 from wagtail.fields import RichTextField
-from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
 
@@ -38,7 +37,7 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
-                ImageChooserPanel("landing_image_section"),
+                FieldPanel("landing_image_section"),
                 FieldPanel("landing_section_text"),
             ],
             heading="Landing Section",
