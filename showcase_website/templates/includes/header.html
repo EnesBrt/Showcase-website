@@ -1,11 +1,13 @@
 {% load wagtailcore_tags navigation_tags %}
 
+{% get_site_root as site_root %}
+{% get_menu_items %}
+
 <header>
-    {% get_site_root as site_root %}
     <nav>
         <p>
         <a href="{% pageurl site_root %}">Home</a> |
-        {% for menuitem in site_root.get_children.live.in_menu %}
+        {% for menuitem in menuitems %}
             <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
         {% endfor %}
         </p>
