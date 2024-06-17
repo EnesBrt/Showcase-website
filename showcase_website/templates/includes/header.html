@@ -10,6 +10,9 @@
         {% for menuitem in menuitems %}
             <a href="{% pageurl menuitem %}">{{ menuitem.title }}</a>
         {% endfor %}
+        {% if child_page %}
+            <a href="{% pageurl child_page %}">{{ child_page.title }}</a>
+        {% endif %}
         </p>
     </nav>
 </header>

@@ -4,36 +4,8 @@ from wagtail.models import Page
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
-# import parentalKey:
-from modelcluster.fields import ParentalKey
-
-# import FieldRowPanel and InlinePanel:
-from wagtail.admin.panels import (
-    FieldPanel,
-    FieldRowPanel,
-    InlinePanel,
-    MultiFieldPanel,
-    PublishingPanel,
-)
-
-from wagtail.fields import RichTextField
-from wagtail.models import (
-    DraftStateMixin,
-    PreviewableMixin,
-    RevisionMixin,
-    TranslatableMixin,
-)
-
-# import AbstractEmailForm and AbstractFormField:
-from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
-
-# import FormSubmissionsPanel:
-from wagtail.contrib.forms.panels import FormSubmissionsPanel
-from wagtail.contrib.settings.models import (
-    BaseGenericSetting,
-    register_setting,
-)
-from wagtail.snippets.models import register_snippet
+from wagtail.fields import StreamField
+from wagtail import blocks
 
 
 class HomePage(Page):
@@ -64,17 +36,8 @@ class HomePage(Page):
         related_name="+",
     )
 
-    # Contact section of the single page website
-
-    intro = RichTextField(blank=True)
-    thank_you_text = RichTextField(blank=True)
-
-
-class FormField(AbstractFormField):
-    page = ParentalKey("HomePage", on_delete=models.CASCADE, related_name="form_fields")
-
     # Contentt panels
-    content_panels = AbstractEmailForm.content_panels + [
+    content_panels = Page.content_panels + [
         MultiFieldPanel(
             [
                 FieldPanel("landing_image_section"),
@@ -96,21 +59,5 @@ class FormField(AbstractFormField):
                 FieldPanel("services_image_section"),
             ],
             heading="Services Section",
-        ),
-        FormSubmissionsPanel(),
-        FieldPanel("intro"),
-        InlinePanel("form_fields", label="Form fields"),
-        FieldPanel("thank_you_text"),
-        MultiFieldPanel(
-            [
-                FieldRowPanel(
-                    [
-                        FieldPanel("from_address"),
-                        FieldPanel("to_address"),
-                    ]
-                ),
-                FieldPanel("subject"),
-            ],
-            "Email",
         ),
     ]
