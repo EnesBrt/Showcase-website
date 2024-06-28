@@ -38,10 +38,12 @@ class FormField(AbstractFormField):
 
 
 class FormPage(AbstractEmailForm):
+    display_title = models.BooleanField(default=True)
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
 
     content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel("display_title"),
         FormSubmissionsPanel(),
         FieldPanel("intro"),
         InlinePanel("form_fields", label="Form fields"),
