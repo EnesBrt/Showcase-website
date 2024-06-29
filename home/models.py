@@ -40,8 +40,8 @@ class HomePage(Page):
     )
 
     # Conctact section of the single page website
-    conctact_us_section_title = models.CharField(max_length=255, blank=True)
-    conctact_us_section_text = RichTextField(blank=True)
+    contact_us_section_title = models.CharField(max_length=255, blank=True)
+    contact_us_section_text = RichTextField(blank=True)
     contact_us_image_section = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
@@ -77,8 +77,8 @@ class HomePage(Page):
         ),
         MultiFieldPanel(
             [
-                FieldPanel("conctact_us_section_title"),
-                FieldPanel("conctact_us_section_text"),
+                FieldPanel("contact_us_section_title"),
+                FieldPanel("contact_us_section_text"),
                 FieldPanel("contact_us_image_section"),
             ],
             heading="Conctact Us Section",

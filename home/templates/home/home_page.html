@@ -2,6 +2,12 @@
 {% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
 
+{% block head %}
+    <!-- Assurez-vous que cette section existe dans votre base.html ou ajoutez directement le lien ici -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock head %}
+
+
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
@@ -15,16 +21,85 @@
             <img src="{{ img.url }}" alt="{{ img.alt }}" style="width: 100%; height: auto;">
         </div>
     </div>
-    <div id="about_us">
-        <h1>{{ page.about_us_section_title }}</h1>
-        {{ page.about_us_section_text|richtext }}
+    
+    <div style="padding-bottom: 50px; padding-top: 50px;">
+        <div id="about_us" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
+            <h1 class="text-center">{{ page.about_us_section_title }}</h1>
+            <ul class="valeurs flexBetween" style="display: flex; justify-content: space-around; list-style: none; padding: 0; margin-top: 80px;">
+                <li style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img class="lozad" width="142" height="142" src="{% static 'Altruisme icone.png' %}" alt="">
+                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px">Altruisme</p>
+                    <p style="width:90%; margin-left:auto;margin-right:auto">L’altruisme est une valeur essentielle, il est l’esprit de notre entrprise.</p>
+                </li>
+                <li style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img class="lozad" width="142" height="142" src="{% static 'Quality icon.png' %}" alt="">
+                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px">Qualité</p>
+                    <p style="width:90%; margin-left:auto;margin-right:auto">La qualité est une valeur motrice, elle est notre soure d'énergie.</p>
+                </li>
+                <li style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img class="lozad" width="142" height="142" src="{% static 'Respect icon.png' %}" alt="">
+                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px">Recpect</p>
+                    <p style="width:90%; margin-left:auto;margin-right:auto">Le respect est une valeur incontournable, il est le coeur de notre entreprise !</p>
+                </li>
+            </ul>
+            {{ page.about_us_section_text|richtext }}
+        </div>
     </div>
-    <div id="services">
-        <h1>{{ page.services_section_title }}</h1>
-        {{ page.services_section_text|richtext }}
+
+    <div style="background-color: #f9f9f9; padding-bottom: 50px; padding-top: 50px;">
+        <div id="services" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
+            <h1 class="text-center">{{ page.services_section_title }}</h1>
+            <div class="custom-richtext" style="margin-top: 80px; color: goldenrod; text-align: center;">
+                {{ page.services_section_text|richtext }}
+            </div>
+            <div class="w100 hidden-m" style="margin-top: 80px;">
+                <div class="sliderServicesV2 flexBetween" style="display: flex; flex-direction: row; justify-content: space-between; margin-bottom: 30px;">
+                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                        <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-menage-gold.svg?w=172&amp;h=138" alt="Picto Ménage à domicile" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-menage-gold.svg?w=172&amp;h=138" data-loaded="true">
+                        <p class="ft16 font-chalet mt10 text-center">Ménage à domicile</p>
+                    </div>
+                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                        <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-repassage-gold.svg?w=172&amp;h=138" alt="Picto Repassage à domicile" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-repassage-gold.svg?w=172&amp;h=138" data-loaded="true">
+                        <p class="ft16 font-chalet mt10 text-center">Repassage à domicile</p>
+                    </div>
+                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                        <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-aine-gold.svg?w=172&amp;h=138" alt="Picto Ménage pour les ainés" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-aine-gold.svg?w=172&amp;h=138" data-loaded="true">
+                        <p class="ft16 font-chalet mt10 text-center">Ménage pour les ainés</p>
+                    </div>
+                </div>
+                <div class="sliderServicesV2 flexBetween" style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                        <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-nettoyage-gold.svg?w=172&amp;h=138" alt="Picto Grand nettoyage" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-nettoyage-gold.svg?w=172&amp;h=138" data-loaded="true">
+                        <p class="ft16 font-chalet mt10 text-center">Grand nettoyage</p>
+                    </div>
+                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                        <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-residence-gold.svg?w=172&amp;h=138" alt="Picto Résidence secondaire" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-residence-gold.svg?w=172&amp;h=138" data-loaded="true">
+                        <p class="ft16 font-chalet mt10 text-center">Résidence secondaire</p>
+                    </div>
+                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                        <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-encore-gold-2.svg?w=113&amp;h=138" alt="Picto Et bien plus encore !" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-encore-gold-2.svg?w=113&amp;h=138" data-loaded="true">
+                        <p class="ft16 font-chalet mt10 text-center">Et bien plus encore !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="contact_us">
-        <h1>{{ page.contact_us_section_title }}</h1>
-        {{ page.contact_us_section_text|richtext }}
+
+    <div style="padding-bottom: 50px; padding-top: 50px;">
+        <div id="contact_us" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;" >
+            <h1 class="text-center">{{ page.contact_us_section_title }}</h1>
+            <div class="container" style="display: flex; align-items: center; gap: 20px;">
+                <div class="image-container" style="margin-top: 80px; flex: 1; position: relative;">
+                    <img src="{% static 'Étudiant Dactylographie Clavier.jpg' %}" alt="picture" style="width: 100%; max-width: 700px; height: auto; position: relative; z-index: 1; border-top-left-radius: 20px; border-bottom-left-radius: 20px; box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);">
+                    <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 50px; background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 100%); z-index: 2;"></div>
+                </div>
+                <div style="flex: 1; color: goldenrod; text-align: center; vertical-align: middle;">
+                    {{ page.contact_us_section_text|richtext }}
+                    <div style="display: flex; justify-content: center;">
+                        <a class="nav-item nav-link btn rounded-pill" style="margin-top: 30px; width: 300px; background-color: goldenrod; color: white; outline: none;" href="http://127.0.0.1:8000/contact/">Je demande un devis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock content %}
