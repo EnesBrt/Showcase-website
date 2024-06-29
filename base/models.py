@@ -30,6 +30,7 @@ from wagtail.contrib.settings.models import (
     register_setting,
 )
 from wagtail.snippets.models import register_snippet
+from wagtail.admin.mail import send_mail
 
 
 # ... keep the definition of NavigationSettings and FooterText. Add FormField and FormPage:
@@ -61,3 +62,18 @@ class FormPage(AbstractEmailForm):
             "Email",
         ),
     ]
+
+    def send_mail(self, form):
+
+        # Préparer le sujet et le corps du message
+        subject = subject = f"{self.subject}"
+        message = self.render_email(form)
+        addresses = [x.strip() for x in self.to_address.split(",")]
+
+        # Envoyer l'email
+        send_mail(
+            subject,
+            message,
+            addresses,
+            self.from_address,
+        )
