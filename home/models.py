@@ -24,6 +24,10 @@ class HomePage(Page):
 
     landing_section_text = RichTextField(blank=True)
 
+    # Company information
+    our_company_title = models.CharField(max_length=255, blank=True)
+    our_company_text = RichTextField(blank=True)
+
     # About section of the single page website
     about_us_section_title = models.CharField(max_length=255, blank=True)
     about_us_section_text = RichTextField(blank=True)
@@ -59,6 +63,13 @@ class HomePage(Page):
                 FieldPanel("landing_section_text"),
             ],
             heading="Landing Section",
+        ),
+        MultiFieldPanel(
+            [
+                FieldPanel("our_company_title"),
+                FieldPanel("our_company_text"),
+            ],
+            heading="Our Company Section",
         ),
         MultiFieldPanel(
             [

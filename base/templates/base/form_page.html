@@ -1,10 +1,79 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
+{% load static %}
+
+{% block head %}
+    <!-- Assurez-vous que cette section existe dans votre base.html ou ajoutez directement le lien ici -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock head %}
 
 {% block body_class %}template-formpage{% endblock %}
 
 {% block content %}
-    {% if page.display_title %}
+
+<section class="bg-light py-3 py-md-5">
+    <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+            <h3 class="fs-6 text-secondary mb-2 text-uppercase text-center">Demandez un devis</h3>
+            <h2 class="display-5 mb-4 mb-md-5 text-center">Nous cherchons toujours à travailler avec de nouveaux clients.</h2>
+            <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .form-field-spacing {
+          margin-bottom: 30px; /* Ajustez cette valeur selon l'espacement souhaité */
+        }
+      </style>
+      
+      <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-12 col-lg-6">
+                <img class="img-fluid rounded" loading="lazy" src="{% static 'cotonbro.jpg' %}" alt="" style="height: 92%;">
+            </div>
+          <div class="col-12 col-lg-6">
+            <div class="row justify-content-xl-center">
+              <div class="col-12 col-xl-11">
+                <div class="bg-white border rounded shadow-sm overflow-hidden">
+                  <form class="page-form" action="{% pageurl page %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row gy-6 gy-xl-5 p-6 p-xl-5">
+                        {% for field in form %}
+                            {% if field.name == 'message' %}
+                            <!-- Augmenter la taille uniquement pour le troisième champ textarea -->
+                                <div class="col-12 form-field-spacing">
+                                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}{% if field.field.required %} <span class="text-danger">*</span>{% endif %}</label>
+                                    <textarea class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" rows="10" required>{{ field.value }}</textarea>
+                                </div>
+                            {% else %}
+                            <div class="col-12 form-field-spacing">
+                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}{% if field.field.required %} <span class="text-danger">*</span>{% endif %}</label>
+                                {% if field.field.widget.input_type == 'textarea' %}
+                                    <!-- Garder la taille par défaut pour les autres champs textarea -->
+                                    <textarea class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" rows="3" required>{{ field.value }}</textarea>
+                                {% else %}
+                                    <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" value="{{ field.value }}" {% if field.field.required %}required{% endif %}>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button class="btn btn-primary btn-lg" type="submit">Envoyer</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- {% if page.display_title %}
         <h1>{{ page.title }}</h1>
     {% endif %}
     <div>{{ page.intro|richtext }}</div>
@@ -13,5 +82,7 @@
         {% csrf_token %}
         {{ form.as_div }}
         <button type="Submit">Submit</button>
-    </form>
+    </form> -->
+</section>
+    
 {% endblock content %}

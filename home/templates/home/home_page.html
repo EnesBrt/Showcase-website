@@ -17,8 +17,23 @@
         {% endif %}
         {{ page.landing_section_text|richtext }}
         <div style="display: flex; justify-content: center; overflow: hidden; width: 100%;">
-            {% image page.landing_image_section fill-600x203 as img %}
+            {% image page.landing_image_section fill-1792x427 as img %}
             <img src="{{ img.url }}" alt="{{ img.alt }}" style="width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <div style=" background-color: #f9f9f9; padding-bottom: 50px; padding-top: 50px;">
+        <div id="company_info" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;" >
+            <h1 class="text-center">{{ page.our_company_title }}</h1>
+            <div class="container" style="display: flex; align-items: center; gap: 20px;">
+                <div class="image-container" style="margin-top: 80px; flex: 1; position: relative;">
+                    <img src="{% static 'iron.jpg' %}" alt="picture" style="width: 100%; max-width: 700px; height: auto; position: relative; z-index: 1; border-top-left-radius: 20px; border-bottom-left-radius: 20px; box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);">
+                    <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 50px; background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 100%); z-index: 2;"></div>
+                </div>
+                <div style="flex: 1; color: goldenrod; text-align: center; vertical-align: middle; text-align: justify; margin-top: 80px;">
+                    {{ page.our_company_text|richtext }}
+                </div>
+            </div>
         </div>
     </div>
     
@@ -85,7 +100,7 @@
         </div>
     </div>
 
-    <div style="padding-bottom: 50px; padding-top: 50px;">
+    <div style=" padding-bottom: 50px; padding-top: 50px;">
         <div id="contact_us" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;" >
             <h1 class="text-center">{{ page.contact_us_section_title }}</h1>
             <div class="container" style="display: flex; align-items: center; gap: 20px;">
