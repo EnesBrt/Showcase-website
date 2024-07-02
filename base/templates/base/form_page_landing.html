@@ -1,11 +1,43 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
+{% load static %}
+
+{% block title %}{{ page.title }}{% endblock title %}
+
+{% block head %}
+    <!-- Assurez-vous que cette section existe dans votre base.html ou ajoutez directement le lien ici -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock head %}
 
 {% block body_class %}template-formpage{% endblock %}
 
 {% block content %}
-    {% if page.display_title %}
-        <h1>{{ page.title }}</h1>
-    {% endif %}
-    <div>{{ page.thank_you_text|richtext }}</div>
+    <style>
+        /* CSS personnalisé pour centrer verticalement */
+        .vertical-center {
+            min-height: 100vh; /* Utilisez 100vh pour que le conteneur prenne toute la hauteur de la fenêtre */
+            display: flex;
+            align-items: center; /* Centrage vertical */
+            justify-content: center; /* Centrage horizontal */
+        }
+
+        .text-center {
+            font-weight: bold; /* Met le texte en gras */
+        }
+        
+        .img-fluid {
+            margin-top: 50px; /* Ajoute un espace en haut de l'image */
+        }
+        
+    </style>
+
+    <div class="vertical-center">
+        <div class="text-center">
+            {% if page.display_title %}
+                <h1>{{ page.title }}</h1>
+            {% endif %}
+            <div><H3>{{ page.thank_you_text|richtext }}</H3></div>
+            <img width="142" height="142" src="{% static 'Envelope email icon.png' %}" class="img-fluid" alt="Description de l'image">
+        </div>
+    </div>
 {% endblock content %}
