@@ -5,7 +5,7 @@ import dj_database_url
 
 from .base import *
 
-DEBUG = True
+DEBUG = False
 
 DATABASES = {
     "default": dj_database_url.config(conn_max_age=600, conn_health_checks=True)
