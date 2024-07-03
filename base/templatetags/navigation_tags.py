@@ -10,3 +10,8 @@ register = template.Library()
 @register.simple_tag(takes_context=True)
 def get_site_root(context):
     return Site.find_for_request(context["request"]).root_page
+
+
+@register.simple_tag(takes_context=True)
+def get_contact_page(context):
+    return Site.find_for_request(context["request"]).root_page.get_children().last()

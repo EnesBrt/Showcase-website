@@ -15,14 +15,14 @@ urlpatterns = [
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
-    re_path(
-        r"^favicon\.ico$",
-        serve,
-        {
-            "path": "favicon.ico",
-            "document_root": "Showcase-website/static/wagtailadmin/images",
-        },
-    ),
+    # re_path(
+    #     r"^favicon\.ico$",
+    #     serve,
+    #     {
+    #         "path": "favicon.ico",
+    #         "document_root": "Showcase-website/static/wagtailadmin/images",
+    #     },
+    # ),
 ]
 
 
@@ -41,5 +41,5 @@ urlpatterns = urlpatterns + [
     path("", include(wagtail_urls)),
     # Alternatively, if you want Wagtail pages to be served from a subpath
     # of your site, rather than the site root:
-    #    path("pages/", include(wagtail_urls)),
+    # path("pages/", include(wagtail_urls)),
 ]

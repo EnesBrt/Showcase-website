@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags navigation_tags %}
 
 {% block head %}
     <!-- Assurez-vous que cette section existe dans votre base.html ou ajoutez directement le lien ici -->
@@ -105,13 +106,14 @@
             <h1 class="text-center">{{ page.contact_us_section_title }}</h1>
             <div class="container" style="display: flex; align-items: center; gap: 20px;">
                 <div class="image-container" style="margin-top: 80px; flex: 1; position: relative;">
-                    <img src="{% static 'devis.png' %}" alt="picture" style="width: 100%; max-width: 700px; height: auto; position: relative; z-index: 1; border-top-left-radius: 20px; border-bottom-left-radius: 20px; box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);">
+                    <img src="{% static 'office.png' %}" alt="picture" style="width: 100%; max-width: 700px; height: auto; position: relative; z-index: 1; border-top-left-radius: 20px; border-bottom-left-radius: 20px; box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);">
                     <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 50px; background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 100%); z-index: 2;"></div>
                 </div>
                 <div style="flex: 1; color: goldenrod; text-align: center; vertical-align: middle;">
                     {{ page.contact_us_section_text|richtext }}
                     <div style="display: flex; justify-content: center;">
-                        <a class="nav-item nav-link btn rounded-pill" style="margin-top: 30px; width: 300px; background-color: goldenrod; color: white; outline: none;" href="http://127.0.0.1:8000/contact/">Je demande un devis</a>
+                        {% get_contact_page as contact %}
+                        <a class="nav-item nav-link btn rounded-pill" style="margin-top: 30px; width: 300px; background-color: goldenrod; color: white; outline: none;" href="{% pageurl contact %}">Je demande un devis</a>
                     </div>
                 </div>
             </div>
