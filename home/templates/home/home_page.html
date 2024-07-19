@@ -81,60 +81,49 @@
         }
 
         .valeurs, .sliderServicesV2 {
-        display: flex;
-        justify-content: space-around;
-        list-style: none;
-        padding: 0;
-        margin-top: 80px;
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin-top: 80px;
         }
 
         .valeurs li, .sliderServicesV2 .cell {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            background-color: #FFFFFF;
         }
 
         /* Media Queries */
         /* Small Devices, Tablets */
         @media only screen and (max-width: 768px) {
-        #about_us, #services {
-            padding: 50px 20px;
-        }
+            #about_us, #services {
+                padding: 50px 20px;
+            }
         }
 
         /* Extra Small Devices, Phones */
         @media only screen and (max-width: 576px) {
-        #landing, #company_info, #about_us {
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-bottom: 50px;
-            margin-top: 50px;
-        }
+            #landing, #company_info, #about_us {
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 50px;
+                margin-top: 50px;
+            }
 
-        #company_info .container, #about_us .valeurs {
-            flex-direction: column;
-            align-items: center;
-        }
+            .valeurs, .sliderServicesV2 {
+                flex-direction: column;
+            }
 
-        .image-container, .image-container img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
+            .valeurs li, .sliderServicesV2 .cell {
+                margin-bottom: 20px; /* Ajouter de l'espace entre les éléments sur mobile */
+            }
         }
-
-        .image-container div {
-            display: none; /* Masquer l'effet de dégradé sur les images pour les petits écrans */
-        }
-
-        .valeurs li {
-            margin-bottom: 20px; /* Ajouter de l'espace entre les éléments de la liste */
-        }
-    }
 
     </style>
     
