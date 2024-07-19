@@ -69,6 +69,72 @@
                 gap: 10px; /* Réduit l'espace entre les éléments */
             }
         }
+
+        /* Base styles */
+        #about_us, #services {
+        padding: 50px 100px;
+        background-color: #f9f9f9;
+        }
+
+        #about_us h1, #services h1 {
+        text-align: center;
+        }
+
+        .valeurs, .sliderServicesV2 {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        padding: 0;
+        margin-top: 80px;
+        }
+
+        .valeurs li, .sliderServicesV2 .cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        background-color: #FFFFFF;
+        }
+
+        /* Media Queries */
+
+        /* Large Devices, Wide Screens */
+        @media only screen and (max-width: 1200px) {
+        #about_us, #services {
+            padding: 50px 50px;
+        }
+        }
+
+        /* Medium Devices, Desktops */
+        @media only screen and (max-width: 992px) {
+        .valeurs, .sliderServicesV2 {
+            flex-direction: column;
+        }
+        }
+
+        /* Small Devices, Tablets */
+        @media only screen and (max-width: 768px) {
+        #about_us, #services {
+            padding: 50px 20px;
+        }
+        }
+
+        /* Extra Small Devices, Phones */
+        @media only screen and (max-width: 576px) {
+        .valeurs li, .sliderServicesV2 .cell {
+            margin-bottom: 20px;
+        }
+        }
+
+        /* Custom, iPhone Retina */
+        @media only screen and (max-width: 320px) {
+        #about_us, #services {
+            padding: 50px 10px;
+        }
+        }
     </style>
     
     <div id="landing">
