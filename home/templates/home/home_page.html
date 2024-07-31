@@ -21,7 +21,7 @@
         }
 
         /* Styles par défaut pour les écrans de grande taille */
-        #landing h1, #company_info h1 {
+        #company_info h1 {
             font-size: 2em; /* Exemple de taille de police */
         }
 
@@ -35,45 +35,10 @@
             max-width: 700px; /* Limite la largeur maximale de l'image */
         }
 
-        /* Media queries pour tablettes */
-        @media (max-width: 768px) {
-            #company_info {
-                margin-left: 50px;
-                margin-right: 50px;
-                margin-bottom: 50px;
-                margin-top: 50px;
-            }
-
-            .container, .image-container, .container div {
-                flex-direction: column; /* Change la disposition pour une colonne */
-                align-items: center; /* Centre les éléments */
-                text-align: center; /* Centre le texte */
-            }
-
-            .image-container img {
-                max-width: 100%; /* Permet à l'image de s'adapter à la largeur du conteneur */
-            }
-        }
-
-        /* Media queries pour mobiles */
-        @media (max-width: 576px) {
-            #company_info {
-                margin: 20px; /* Réduit encore plus les marges */
-            }
-
-            #landing h1, #company_info h1 {
-                font-size: 1.5em; /* Réduit la taille de la police pour les titres */
-            }
-
-            .container, .image-container, .container div {
-                gap: 10px; /* Réduit l'espace entre les éléments */
-            }
-        }
 
         /* Base styles */
         #about_us, #services {
         padding: 50px 100px;
-        background-color: #f9f9f9;
         }
 
         #about_us h1, #services h1 {
@@ -84,7 +49,7 @@
             display: flex;
             justify-content: space-around;
             list-style: none;
-            padding: 0;
+            padding: 5;
             margin-top: 80px;
         }
 
@@ -96,7 +61,6 @@
             padding: 20px;
             border-radius: 20px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            background-color: #FFFFFF;
         }
 
         /* Media Queries */
