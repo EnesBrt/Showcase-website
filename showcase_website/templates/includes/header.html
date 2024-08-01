@@ -6,69 +6,99 @@
 </head>
 <header>
     <style>
+        /* Styles de base */
+        .navbar {
+            background-color: #F0F0F0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
         .navbar-brand img {
-            margin-left: 50px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
         }
 
         #nav {
-            margin-right: 100px;
+            display: flex;
+            align-items: center;
         }
 
-        .nav-link {
-            white-space: nowrap;
+        /* Styles pour tablettes */
+        @media only screen and (max-width: 992px) {
+            .navbar {
+                padding: 10px 5px;
+            }
+
+            .navbar-brand {
+                margin-left: 5px;
+            }
+
+            .navbar-brand img {
+                width: 50px;
+                height: 50px;
+            }
+
+            #nav {
+                margin-right: 5px;
+            }
+
+            #nav .nav-link {
+                font-size: 14px;
+                padding: 5px 8px;
+            }
+
+            #nav .btn {
+                margin-left: 8px;
+                padding: 5px 8px;
+            }
         }
 
-        @media (max-width: 992px) {
+        /* Ajustements pour smartphones */
+        @media only screen and (max-width: 576px) {
+            .navbar {
+                justify-content: space-between;
+                padding: 10px 0;
+            }
+
+            .navbar-brand {
+                margin-left: 5px;
+            }
+
             .navbar-brand img {
-                margin-left: 20px;
+                width: 40px;
+                height: 40px;
             }
+
             #nav {
-                margin-right: 20px;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-right: 5px;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                margin-left: 15px;
+
+            #nav .nav-link, #nav .btn {
+                font-size: 12px;
+                padding: 3px 6px;
+                margin-bottom: 3px;
             }
-            #nav {
-                margin-right: 0;
-                margin-left: 15px;
-            }
-            .nav-link {
-                margin: 5px 0 !important;
-                display: block;
-                width: 100%;
-                text-align: left;
-            }
-            .navbar-toggler {
-                margin-right: 15px;
-            }
-            .navbar-collapse {
-                width: 100%;
+
+            #nav .btn {
+                margin-left: 0;
             }
         }
     </style>
     
     {% get_contact_page as contact %}
     {% get_site_root as site_root %}
-    <nav class="navbar navbar-expand-md navbar-light" style="background-color: #F0F0F0;">
+    <nav class="navbar navbar-light" style="background-color: #F0F0F0;">
         <a class="navbar-brand" href="#">
-            <img src="{% static 'Cleaning_Logo.jpg' %}" width="70" height="70" class="rounded-circle" style="margin-left: 50px;" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div id="nav" class="ml-auto" style="margin-right: 100px;">
-                <a class="nav-item nav-link active btn btn-primary rounded-pill" href="{% pageurl site_root %}">Accueil <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link btn rounded-pill" style="margin-left: 20px; background-color: goldenrod; color: white; outline: none;" href="{% pageurl contact %}">Je demande un devis</a>
-            </div>
+            <img src="{% static 'Cleaning_Logo.jpg' %}" width="70" height="70" class="rounded-circle" style="margin-left: 50px;"alt="Logo">
+          </a>
+        <div id="nav" class="d-flex ml-auto" style="margin-right: 100px;">
+            <a class="nav-item nav-link active ml-auto btn btn-primary rounded-pill" href="{% pageurl site_root %}">Accueil <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link btn rounded-pill" style="margin-left: 20px; background-color: goldenrod; color: white; outline: none;" href="{% pageurl contact %}">Je demande un devis</a>
         </div>
     </nav>
 </header>
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
