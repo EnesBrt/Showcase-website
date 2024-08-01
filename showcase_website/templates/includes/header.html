@@ -9,9 +9,15 @@
         .navbar-brand img {
             margin-left: 50px;
         }
+
         #nav {
             margin-right: 100px;
         }
+
+        .nav-link {
+            white-space: nowrap;
+        }
+
         @media (max-width: 992px) {
             .navbar-brand img {
                 margin-left: 20px;
@@ -19,24 +25,27 @@
             #nav {
                 margin-right: 20px;
             }
-            .nav-link {
-                margin-left: 10px !important;
-            }
         }
+        
         @media (max-width: 768px) {
             .navbar-brand img {
                 margin-left: 15px;
             }
             #nav {
                 margin-right: 0;
-                flex-direction: column;
-                align-items: center;
+                margin-left: 15px;
             }
             .nav-link {
                 margin: 5px 0 !important;
+                display: block;
+                width: 100%;
+                text-align: left;
             }
             .navbar-toggler {
                 margin-right: 15px;
+            }
+            .navbar-collapse {
+                width: 100%;
             }
         }
     </style>
