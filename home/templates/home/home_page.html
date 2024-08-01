@@ -23,11 +23,6 @@
             margin: 100px;
         }
 
-        #company_info h1, #about_us h1, #services h1 {
-            font-size: 2em;
-            text-align: center;
-        }
-
         .container {
             display: flex;
             align-items: center;
@@ -74,6 +69,8 @@
             border-radius: 20px !important;
         }
 
+
+
         /* Styles spécifiques */
         .custom-richtext {
             margin-top: 80px;
@@ -89,10 +86,6 @@
 
             #landing, #company_info, #about_us, #services, #contact_us {
                 margin: 50px;
-            }
-
-            #company_info h1, #about_us h1, #services h1 {
-                font-size: 1.8em;
             }
 
             #about_us, #services {
@@ -152,7 +145,29 @@
                 text-align: left !important; /* Change to left alignment for better readability */
                 margin-top: 40px !important;
             }
-            
+
+            #contact_us.cl-3-15.center.mb8p.cl-1-17-m {
+            margin: 50px !important;
+            }
+
+            #contact_us .container {
+                flex-direction: column !important;
+            }
+
+            #contact_us .image-container {
+                margin-top: 40px !important;
+                width: 100% !important;
+            }
+
+            #contact_us .image-container img {
+                max-width: 100% !important;
+                border-radius: 20px !important; /* Ajout de border-radius sur tous les côtés */
+            }
+
+            #contact_us div[style*="flex: 1; color: goldenrod;"] {
+                text-align: left !important;
+                margin-top: 40px !important;
+            }
         }
 
         /* Smartphones */
@@ -163,10 +178,6 @@
 
             #landing, #company_info, #about_us, #services, #contact_us {
                 margin: 20px;
-            }
-
-            #company_info h1, #about_us h1, #services h1 {
-                font-size: 1.5em;
             }
 
             #about_us, #services {
@@ -228,8 +239,20 @@
                 margin-top: 30px !important;
             }
 
+            #contact_us.cl-3-15.center.mb8p.cl-1-17-m {
+            margin: 20px !important;
+            }
+
             #contact_us .image-container {
-                margin-top: 40px !important;
+                margin-top: 30px !important;
+            }
+
+            #contact_us .image-container img {
+                border-radius: 10px !important;
+            }
+
+            #contact_us div[style*="flex: 1; color: goldenrod;"] {
+                margin-top: 30px !important;
             }
         }
 
