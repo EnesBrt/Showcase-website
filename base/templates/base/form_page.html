@@ -28,6 +28,37 @@
         .form-field-spacing {
           margin-bottom: 30px; /* Ajustez cette valeur selon l'espacement souhaité */
         }
+
+        /* Styles pour tablettes */
+        @media only screen and (max-width: 992px) {
+            .display-5 {
+                font-size: 2rem;
+            }
+            .form-field-spacing {
+                margin-bottom: 20px;
+            }
+            .py-md-5 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+        }
+
+        /* Styles pour smartphones */
+        @media only screen and (max-width: 768px) {
+            .display-5 {
+                font-size: 1.5rem;
+            }
+            .form-field-spacing {
+                margin-bottom: 15px;
+            }
+            .py-3 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            .col-12.col-lg-6 img {
+                margin-bottom: 2rem;
+            }
+        }
       </style>
       
       <div class="container">
