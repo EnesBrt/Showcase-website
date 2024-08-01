@@ -15,14 +15,17 @@
 
 {% block content %}
     <style>
-        img, video, iframe {
-            max-width: 100%;
-            height: auto;
+        body {
+            font-size: 16px;
         }
 
-        /* Styles par défaut pour les écrans de grande taille */
-        #company_info h1 {
-            font-size: 2em; /* Exemple de taille de police */
+        #company_info, #about_us, #services, #contact_us {
+            margin: 100px;
+        }
+
+        #company_info h1, #about_us h1, #services h1 {
+            font-size: 2em;
+            text-align: center;
         }
 
         .container {
@@ -32,52 +35,142 @@
         }
 
         .image-container img {
-            max-width: 700px; /* Limite la largeur maximale de l'image */
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);
         }
 
-
-        /* Base styles */
         #about_us, #services {
-        padding: 50px 100px;
+            padding: 50px 100px;
         }
 
-        #about_us h1, #services h1 {
-        text-align: center;
+        #about_us.cl-3-15.center.mb8p.cl-1-17-m {
+            margin: 100px !important;
+            padding: 0 !important;
         }
 
-        .valeurs, .sliderServicesV2 {
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
-            padding: 5;
+        #about_us .valeurs.flexBetween {
+            display: flex !important;
+            justify-content: space-around !important;
+            list-style: none !important;
+            padding: 0 !important;
+            margin-top: 80px !important;
+            gap: 40px !important; /* Augmente l'espace entre les cartes */
+        }
+
+        #about_us .valeurs.flexBetween > li {
+            flex: 1 1 0 !important;
+            max-width: calc(33.33% - 40px) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 20px !important;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+            background-color: #FFFFFF !important;
+            border-radius: 20px !important;
+        }
+
+        /* Styles spécifiques */
+        .custom-richtext {
             margin-top: 80px;
+            color: goldenrod;
+            text-align: center;
         }
 
-        .valeurs li, .sliderServicesV2 .cell {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Media Queries */
-        /* Small Devices, Tablets */
-        @media only screen and (max-width: 768px) {
-            #about_us, #services {
-                padding: 50px 20px;
+        /* Tablettes */
+        @media only screen and (max-width: 992px) {
+            body {
+                font-size: 14px;
             }
+
+            #landing, #company_info, #about_us, #services, #contact_us {
+                margin: 50px;
+            }
+
+            #company_info h1, #about_us h1, #services h1 {
+                font-size: 1.8em;
+            }
+
+            #about_us, #services {
+                padding: 40px 50px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .image-container {
+                margin-bottom: 20px;
+            }
+
+            #about_us.cl-3-15.center.mb8p.cl-1-17-m {
+                margin: 50px !important;
+            }
+
+            #about_us .valeurs.flexBetween {
+                flex-wrap: wrap !important;
+            }
+
+            #about_us .valeurs.flexBetween > li {
+                flex-basis: calc(50% - 20px) !important;
+                max-width: calc(50% - 20px) !important;
+                margin-bottom: 40px !important;
+            }
+
+            #services.cl-3-15.center.mb8p.cl-1-17-m {
+                margin: 50px !important;
+            }
+
+            #services .sliderServicesV2.flexBetween {
+                flex-wrap: wrap !important;
+            }
+
+            #services .sliderServicesV2.flexBetween .cell {
+                flex-basis: calc(50% - 10px) !important;
+                max-width: calc(50% - 10px) !important;
+                margin-bottom: 20px !important;
+            }
+
+            #services .sliderServicesV2.flexBetween .cell img {
+                display: block !important;
+                margin: 0 auto !important;
+            }
+
+            #company_info.cl-3-15.center.mb8p.cl-1-17-m {
+                margin: 50px !important;
+            }
+
+            #company_info .container {
+                flex-direction: column !important;
+            }
+
+            #company_info .text-container {
+                text-align: left !important; /* Change to left alignment for better readability */
+                margin-top: 40px !important;
+            }
+            
         }
 
-        /* Extra Small Devices, Phones */
-        @media only screen and (max-width: 576px) {
-            #landing, #company_info, #about_us {
-                margin-left: 20px;
-                margin-right: 20px;
-                margin-bottom: 50px;
-                margin-top: 50px;
+        /* Smartphones */
+        @media only screen and (max-width: 768px) {
+            body {
+                font-size: 12px;
+            }
+
+            #landing, #company_info, #about_us, #services, #contact_us {
+                margin: 20px;
+            }
+
+            #company_info h1, #about_us h1, #services h1 {
+                font-size: 1.5em;
+            }
+
+            #about_us, #services {
+                padding: 30px 20px;
             }
 
             .valeurs, .sliderServicesV2 {
@@ -85,7 +178,54 @@
             }
 
             .valeurs li, .sliderServicesV2 .cell {
-                margin-bottom: 20px; /* Ajouter de l'espace entre les éléments sur mobile */
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            #about_us.cl-3-15.center.mb8p.cl-1-17-m {
+                margin: 20px !important;
+            }
+
+            #about_us .valeurs.flexBetween {
+                flex-direction: column !important;
+            }
+
+            #about_us .valeurs.flexBetween > li {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 40px !important;
+            }
+
+            #services.cl-3-15.center.mb8p.cl-1-17-m {
+                margin: 20px !important;
+            }
+
+            #services .sliderServicesV2.flexBetween {
+                flex-direction: column !important;
+            }
+
+            #services .sliderServicesV2.flexBetween .cell {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-bottom: 20px !important;
+            }
+
+            #services .sliderServicesV2.flexBetween .cell img {
+                display: block !important;
+                margin: 0 auto !important;
+            }
+
+            #company_info.cl-3-15.center.mb8p.cl-1-17-m {
+                margin: 20px !important;
+            }
+
+            #company_info .image-container {
+                margin-top: 40px !important;
+            }
+
+            #company_info .text-container {
+                text-align: left !important; /* Keep left alignment for smartphones */
+                margin-top: 30px !important;
             }
         }
 
