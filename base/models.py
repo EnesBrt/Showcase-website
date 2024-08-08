@@ -1,5 +1,7 @@
 from django.db import models
 
+from wagtail.models import Page
+
 # import parentalKey:
 from modelcluster.fields import ParentalKey
 
@@ -77,6 +79,21 @@ class FormPage(AbstractEmailForm):
             addresses,
             self.from_address,
         )
+
+
+class LegalMansion(Page):
+    title_mention_legal = models.CharField(max_length=500, blank=True)
+    text_mention_legal = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        MultiFieldPanel(
+            [
+                FieldPanel("title_mention_legal"),
+                FieldPanel("text_mention_legal"),
+            ],
+            heading="Mention legal",
+        ),
+    ]
 
 
 @register_snippet
