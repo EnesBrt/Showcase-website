@@ -82,10 +82,13 @@ class FormPage(AbstractEmailForm):
 
 
 class LegalMansion(Page):
+    display_title = models.BooleanField(default=True)
+    template = "base/legal_mantion_page.html"
     title_mention_legal = models.CharField(max_length=500, blank=True)
     text_mention_legal = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
+        FieldPanel("display_title"),
         MultiFieldPanel(
             [
                 FieldPanel("title_mention_legal"),
