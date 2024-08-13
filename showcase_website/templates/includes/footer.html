@@ -1,11 +1,69 @@
 {# Load navigation_tags at the top of the file: #}
 {% load navigation_tags %}
+{% load wagtailcore_tags navigation_tags %}
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        footer {
+            padding: 50px 0;
+            background-color: lightslategray;
+            position: relative;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-left: 5%;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 0 20px;
+        }
+
+        .footer-section h6 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .footer-section a {
+            display: block;
+            color: whitesmoke;
+            text-decoration: underline;
+            margin-bottom: 5px;
+        }
+
+        .footer-section a:hover {
+            color: #007bff;
+        }
+
+        .legal-link {
+            position: absolute;
+            left: 50px;
+            bottom: 20px;
+            color: whitesmoke;
+            text-decoration: underline;
+        }
+
+        .footer-section h6 {
+            color: whitesmoke;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <footer>
-    {# Add footer_text: #}
-    {% get_footer_text %}
+    <div class="footer-content">
+        <div class="footer-section">
+            <h6>Informations pratiques</h6>
+            <a href="/mention-legales/">{% get_footer_text %}</a>
+        </div>
+        <div class="footer-section">
+            <h6>Suivez nous sur:</h6>
+            <a href="" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+    </div>
 </footer>

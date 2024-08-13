@@ -8,7 +8,6 @@
     <style>
         /* Styles de base */
         .navbar {
-            background-color: #F0F0F0;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -92,13 +91,13 @@
     
     {% get_contact_page as contact %}
     {% get_site_root as site_root %}
-    <nav class="navbar navbar-light" style="background-color: #F0F0F0;">
+    <nav class="navbar navbar-light">
         <a class="navbar-brand" href="#">
             <img src="{% static 'Cleaning_Logo.jpg' %}" width="70" height="70" class="rounded-circle" style="margin-left: 50px;"alt="Logo">
           </a>
         <div id="nav" class="d-flex ml-auto" style="margin-right: 100px;">
             <a class="nav-item nav-link active ml-auto btn btn-primary rounded-pill" href="{% pageurl site_root %}">Accueil <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link btn rounded-pill" style="margin-left: 20px; background-color: goldenrod; color: white; outline: none;" href="{% pageurl contact %}">Je demande un devis</a>
+            <a class="nav-item nav-link btn rounded-pill" style="margin-left: 20px; background-color: goldenrod; color: white; outline: none;" href="/contact/">Je demande un devis</a>
         </div>
     </nav>
 </header>

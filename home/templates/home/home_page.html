@@ -4,10 +4,15 @@
 {% load wagtailcore_tags navigation_tags %}
 
 {% block head %}
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
     <!-- Assurez-vous que cette section existe dans votre base.html ou ajoutez directement le lien ici -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 {% endblock head %}
 
 
@@ -15,8 +20,21 @@
 
 {% block content %}
     <style>
-        body {
-            font-size: 16px;
+
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+        .rich-text-content,
+        .rich-text-content p,
+        .rich-text-content h1,
+        .rich-text-content h2,
+        .rich-text-content h3,
+        .rich-text-content h4,
+        .rich-text-content h5,
+        .rich-text-content h6,
+        .rich-text-content ul,
+        .rich-text-content ol,
+        .rich-text-content li {
+            font-family: 'Nunito Sans', sans-serif;
         }
 
         #company_info, #about_us, #services, #contact_us {
@@ -33,8 +51,8 @@
             max-width: 700px;
             width: 100%;
             height: auto;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
             box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);
         }
 
@@ -273,6 +291,24 @@
             }
         }
 
+        .value-card {
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        }
+
+        .value-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card {
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
     </style>
     
     <div id="landing">
@@ -286,39 +322,35 @@
         </div>
     </div>
 
-    <div style=" background-color: #f9f9f9; padding-bottom: 50px; padding-top: 50px;">
-        <div id="company_info" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;" >
-            <h1 class="text-center">{{ page.our_company_title }}</h1>
-            <div class="container" style="display: flex; align-items: center; gap: 20px;">
-                <div class="image-container" style="margin-top: 80px; flex: 1; position: relative;">
-                    <img src="{% static 'iron.jpg' %}" alt="picture" style="width: 100%; max-width: 700px; height: auto; position: relative; z-index: 1; border-top-left-radius: 20px; border-bottom-left-radius: 20px; box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);">
-                    <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 50px; background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 100%); z-index: 2;"></div>
-                </div>
-                <div style="flex: 1; color: goldenrod; text-align: center; vertical-align: middle; text-align: justify; margin-top: 80px;">
-                    {{ page.our_company_text|richtext }}
-                </div>
+    <div style="background-color: #f9f9f9; position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); height: 600px; border-radius: 20px;">
+        <div style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-radius: 20px;">
+            <img src="{% static 'shower.jpeg' %}" alt="picture" style="width: 200%; height: 100%; object-fit: cover; object-position: left center;">
+        </div>
+        <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background-color: white; display: flex; justify-content: center; align-items: center; border-radius: 20px;">
+            <div class="rich-text-content" style="text-align: center; padding: 20px; max-width: 80%;">
+                {{ page.our_company_text|richtext }}
             </div>
         </div>
     </div>
     
     <div style="padding-bottom: 50px; padding-top: 50px;">
         <div id="about_us" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
-            <h1 class="text-center">{{ page.about_us_section_title }}</h1>
+            <h1 class="text-center" style="font-weight: bold;">{{ page.about_us_section_title }}</h1>
             <ul class="valeurs flexBetween" style="display: flex; justify-content: space-around; list-style: none; padding: 0; margin-top: 80px;">
-                <li style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <img class="lozad" width="142" height="142" src="{% static 'Altruisme icone.png' %}" alt="">
-                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px">Altruisme</p>
-                    <p style="width:90%; margin-left:auto;margin-right:auto">L’altruisme est une valeur essentielle, il est l’esprit de notre entrprise.</p>
+                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px; font-weight: bold;">Altruisme</p>
+                    <p class="rich-text-content" style="width:90%; margin-left:auto;margin-right:auto">L’altruisme est une valeur essentielle, il est l’esprit de notre entrprise.</p>
                 </li>
-                <li style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <img class="lozad" width="142" height="142" src="{% static 'Quality icon.png' %}" alt="">
-                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px">Qualité</p>
-                    <p style="width:90%; margin-left:auto;margin-right:auto">La qualité est une valeur motrice, elle est notre soure d'énergie.</p>
+                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px; font-weight: bold;">Qualité</p>
+                    <p class="rich-text-content" style="width:90%; margin-left:auto;margin-right:auto">La qualité est une valeur motrice, elle est notre soure d'énergie.</p>
                 </li>
-                <li style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <img class="lozad" width="142" height="142" src="{% static 'Respect icon.png' %}" alt="">
-                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px">Recpect</p>
-                    <p style="width:90%; margin-left:auto;margin-right:auto">Le respect est une valeur incontournable, il est le coeur de notre entreprise !</p>
+                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px; font-weight: bold;">Recpect</p>
+                    <p  class="rich-text-content" style="width:90%; margin-left:auto;margin-right:auto">Le respect est une valeur incontournable, il est le coeur de notre entreprise !</p>
                 </li>
             </ul>
             {{ page.about_us_section_text|richtext }}
@@ -327,35 +359,35 @@
 
     <div style="background-color: #f9f9f9; padding-bottom: 50px; padding-top: 50px;">
         <div id="services" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
-            <h1 class="text-center">{{ page.services_section_title }}</h1>
+            <h1 class="text-center" style="font-weight: bold;">{{ page.services_section_title }}</h1>
             <div class="custom-richtext" style="margin-top: 80px; color: goldenrod; text-align: center;">
                 {{ page.services_section_text|richtext }}
             </div>
             <div class="w100 hidden-m" style="margin-top: 80px;">
                 <div class="sliderServicesV2 flexBetween" style="display: flex; flex-direction: row; justify-content: space-around; margin-bottom: 30px;">
-                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                    <div class="cell service-card" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
                         <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-menage-gold.svg?w=172&amp;h=138" alt="Picto Ménage à domicile" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-menage-gold.svg?w=172&amp;h=138" data-loaded="true">
                         <p class="ft16 font-chalet mt10 text-center">Ménage à domicile</p>
                     </div>
-                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                    <div class="cell service-card" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
                         <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-repassage-gold.svg?w=172&amp;h=138" alt="Picto Repassage à domicile" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-repassage-gold.svg?w=172&amp;h=138" data-loaded="true">
                         <p class="ft16 font-chalet mt10 text-center">Repassage à domicile</p>
                     </div>
-                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                    <div class="cell service-card" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
                         <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-aine-gold.svg?w=172&amp;h=138" alt="Picto Ménage pour les ainés" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-aine-gold.svg?w=172&amp;h=138" data-loaded="true">
                         <p class="ft16 font-chalet mt10 text-center">Ménage pour les ainés</p>
                     </div>
                 </div>
                 <div class="sliderServicesV2 flexBetween" style="display: flex; flex-direction: row; justify-content: space-around;;">
-                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                    <div class="cell service-card" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
                         <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-nettoyage-gold.svg?w=172&amp;h=138" alt="Picto Grand nettoyage" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-nettoyage-gold.svg?w=172&amp;h=138" data-loaded="true">
                         <p class="ft16 font-chalet mt10 text-center">Grand nettoyage</p>
                     </div>
-                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                    <div class="cell service-card" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
                         <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-residence-gold.svg?w=172&amp;h=138" alt="Picto Résidence secondaire" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-residence-gold.svg?w=172&amp;h=138" data-loaded="true">
                         <p class="ft16 font-chalet mt10 text-center">Résidence secondaire</p>
                     </div>
-                    <div class="cell" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
+                    <div class="cell service-card" style="padding: 20px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); background-color: #FFFFFF;">
                         <img width="172" height="138" class="lozad" data-src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-encore-gold-2.svg?w=113&amp;h=138" alt="Picto Et bien plus encore !" loading="lazy" src="https://cdn.domiagroup.com/https://menage.shiva.fr/assets/images/devis-v4/picto-encore-gold-2.svg?w=113&amp;h=138" data-loaded="true">
                         <p class="ft16 font-chalet mt10 text-center">Et bien plus encore !</p>
                     </div>
@@ -364,22 +396,52 @@
         </div>
     </div>
 
-    <div style=" padding-bottom: 50px; padding-top: 50px;">
-        <div id="contact_us" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;" >
-            <h1 class="text-center">{{ page.contact_us_section_title }}</h1>
-            <div class="container" style="display: flex; align-items: center; gap: 20px;">
-                <div class="image-container" style="margin-top: 80px; flex: 1; position: relative;">
-                    <img src="{% static 'office_image.jpg' %}" alt="picture" style="width: 100%; max-width: 700px; height: auto; position: relative; z-index: 1; border-top-left-radius: 20px; border-bottom-left-radius: 20px; box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);">
-                    <div style="position: absolute; top: 0; right: 0; bottom: 0; width: 50px; background: linear-gradient(to right, rgba(255,255,255,0) 0%, #FFFFFF 100%); z-index: 2;"></div>
-                </div>
-                <div style="flex: 1; color: goldenrod; text-align: center; vertical-align: middle;">
-                    {{ page.contact_us_section_text|richtext }}
-                    <div style="display: flex; justify-content: center;">
-                        {% get_contact_page as contact %}
-                        <a class="nav-item nav-link btn rounded-pill" style="margin-top: 30px; width: 300px; background-color: goldenrod; color: white; outline: none;" href="{% pageurl contact %}">Je demande un devis</a>
-                    </div>
-                </div>
+    <div style="padding-bottom: 50px; padding-top: 50px; position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+        <img src="{% static 'menage.jpeg' %}" alt="Office image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(to right, 
+            rgba(255,255,255,0) 40%, 
+            rgba(255,255,255,0.5) 50%, 
+            rgba(255,255,255,1) 60%, 
+            rgba(255,255,255,1) 100%
+        ); pointer-events: none;"></div>
+        <div style="position: absolute; top: 50%; right: 5%; transform: translateY(-50%); width: 40%; height: 70%; background-color: white; border-radius: 15px; padding: 40px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h1 class="text-center" style="font-weight: bold;">{{ page.contact_us_section_title }}</h1>
+                <div class="rich-text-content" style="margin-top: 50px; text-align: center;">{{ page.contact_us_section_text|richtext }}</div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <a class="nav-item nav-link btn rounded-pill" style="margin-top: 30px; width: 300px; background-color: goldenrod; color: white; outline: none;" href="/contact/">Je demande un devis</a>
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.value-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-card');
+        
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
 {% endblock content %}
