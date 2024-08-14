@@ -35,10 +35,6 @@
             font-family: 'Nunito Sans', sans-serif;
         }
 
-        #company_info, #about_us, #services, #contact_us {
-            margin: 100px;
-        }
-
         .container {
             display: flex;
             align-items: center;
@@ -54,36 +50,6 @@
             box-shadow: -10px 0 15px -5px rgba(0,0,0,0.5);
         }
 
-        #about_us, #services {
-            padding: 50px 100px;
-        }
-
-        #about_us.cl-3-15.center.mb8p.cl-1-17-m {
-            margin: 100px !important;
-            padding: 0 !important;
-        }
-
-        #about_us .valeurs.flexBetween {
-            display: flex !important;
-            justify-content: space-around !important;
-            list-style: none !important;
-            padding: 0 !important;
-            margin-top: 80px !important;
-            gap: 40px !important; /* Augmente l'espace entre les cartes */
-        }
-
-        #about_us .valeurs.flexBetween > li {
-            flex: 1 1 0 !important;
-            max-width: calc(33.33% - 40px) !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 20px !important;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
-            background-color: #FFFFFF !important;
-            border-radius: 20px !important;
-        }
 
         .value-card {
         transition: transform 0.3s ease-in-out;
@@ -102,8 +68,24 @@
         .service-card:hover {
             transform: scale(1.05);
         }
+        
+
+        /* Ajustements généraux pour la réactivité */
+        .rich-text-content {
+        max-width: 100% !important;
+        }
+
+        img {
+        max-width: 100%;
+        height: auto;
+        }
+
+        .btn {
+        white-space: normal;
+        word-wrap: break-word;
+        }
+
     </style>
-    
     
     <div id="landing">
         {% if page.display_title %}
@@ -123,27 +105,26 @@
         </div>
     </div>
     
-    <div id=values" style="padding-bottom: 50px; padding-top: 50px;">
-        <div  class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
+    <div id="values" style="padding-bottom: 50px; padding-top: 50px;">
+        <div class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
             <h1 class="text-center" style="font-weight: bold;">{{ page.about_us_section_title }}</h1>
             <ul class="valeurs flexBetween" style="display: flex; justify-content: space-around; list-style: none; padding: 0; margin-top: 80px;">
-                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; padding: 20px; margin: 0 15px; width: 30%;">
                     <img class="lozad" width="142" height="142" src="{% static 'Altruisme icone.png' %}" alt="">
                     <p class="ft18 gold font-chalet mb20" style="margin-top: 10px; font-weight: bold;">Altruisme</p>
-                    <p class="rich-text-content" style="width:90%; margin-left:auto;margin-right:auto">L’altruisme est une valeur essentielle, il est l’esprit de notre entrprise.</p>
+                    <p class="rich-text-content" style="width:90%; margin-left:auto; margin-right:auto; text-align: center;">L'altruisme est une valeur essentielle, il est l'esprit de notre entreprise.</p>
                 </li>
-                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; padding: 20px; margin: 0 15px; width: 30%;">
                     <img class="lozad" width="142" height="142" src="{% static 'Quality icon.png' %}" alt="">
                     <p class="ft18 gold font-chalet mb20" style="margin-top: 10px; font-weight: bold;">Qualité</p>
-                    <p class="rich-text-content" style="width:90%; margin-left:auto;margin-right:auto">La qualité est une valeur motrice, elle est notre soure d'énergie.</p>
+                    <p class="rich-text-content" style="width:90%; margin-left:auto; margin-right:auto; text-align: center;">La qualité est une valeur motrice, elle est notre source d'énergie.</p>
                 </li>
-                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 10px; padding: 20px; margin: 0 15px; width: 30%;">
                     <img class="lozad" width="142" height="142" src="{% static 'Respect icon.png' %}" alt="">
-                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px; font-weight: bold;">Recpect</p>
-                    <p  class="rich-text-content" style="width:90%; margin-left:auto;margin-right:auto">Le respect est une valeur incontournable, il est le coeur de notre entreprise !</p>
+                    <p class="ft18 gold font-chalet mb20" style="margin-top: 10px; font-weight: bold;">Respect</p>
+                    <p class="rich-text-content" style="width:90%; margin-left:auto; margin-right:auto; text-align: center;">Le respect est une valeur incontournable, il est le cœur de notre entreprise !</p>
                 </li>
             </ul>
-            {{ page.about_us_section_text|richtext }}
         </div>
     </div>
 
