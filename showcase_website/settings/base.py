@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     "home",
     "base",
     "search",
-    "webpack_loader",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.contrib.settings",

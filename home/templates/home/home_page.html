@@ -85,210 +85,6 @@
             border-radius: 20px !important;
         }
 
-
-
-        /* Styles spécifiques */
-        .custom-richtext {
-            margin-top: 80px;
-            color: goldenrod;
-            text-align: center;
-        }
-
-        /* Tablettes */
-        @media only screen and (max-width: 992px) {
-            body {
-                font-size: 14px;
-            }
-
-            #company_info, #about_us, #services, #contact_us {
-                margin: 50px;
-            }
-
-            #about_us, #services {
-                padding: 40px 50px;
-            }
-
-            .container {
-                flex-direction: column;
-            }
-
-            .image-container {
-                margin-bottom: 20px;
-            }
-
-            #about_us.cl-3-15.center.mb8p.cl-1-17-m {
-                margin: 50px !important;
-            }
-
-            #about_us .valeurs.flexBetween {
-                flex-wrap: wrap !important;
-            }
-
-            #about_us .valeurs.flexBetween > li {
-                flex-basis: calc(50% - 20px) !important;
-                max-width: calc(50% - 20px) !important;
-                margin-bottom: 40px !important;
-            }
-
-            #services.cl-3-15.center.mb8p.cl-1-17-m {
-                margin: 50px !important;
-            }
-
-            #services .sliderServicesV2.flexBetween {
-                flex-wrap: wrap !important;
-            }
-
-            #services .sliderServicesV2.flexBetween .cell {
-                flex-basis: calc(50% - 10px) !important;
-                max-width: calc(50% - 10px) !important;
-                margin-bottom: 20px !important;
-            }
-
-            #services .sliderServicesV2.flexBetween .cell img {
-                display: block !important;
-                margin: 0 auto !important;
-            }
-
-            #company_info.cl-3-15.center.mb8p.cl-1-17-m {
-                margin: 50px !important;
-            }
-
-            #company_info .container {
-                flex-direction: column !important;
-            }
-
-            #company_info .text-container {
-                text-align: left !important; /* Change to left alignment for better readability */
-                margin-top: 40px !important;
-            }
-
-            #contact_us.cl-3-15.center.mb8p.cl-1-17-m {
-            margin: 50px !important;
-            }
-
-            #contact_us .container {
-                flex-direction: column !important;
-            }
-
-            #contact_us .image-container {
-                margin-top: 40px !important;
-                width: 100% !important;
-            }
-
-            #contact_us .image-container img {
-                max-width: 100% !important;
-                border-radius: 20px !important; /* Ajout de border-radius sur tous les côtés */
-            }
-
-            #contact_us div[style*="flex: 1; color: goldenrod;"] {
-            text-align: left !important;
-            margin-top: 40px !important;
-            width: 100% !important;
-        }
-
-            #contact_us div[style*="flex: 1; color: goldenrod;"] > div {
-                justify-content: flex-start !important;
-            }
-
-            #contact_us .nav-item.nav-link.btn.rounded-pill {
-                width: auto !important;
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-        }
-
-        /* Smartphones */
-        @media only screen and (max-width: 768px) {
-            body {
-                font-size: 12px;
-            }
-
-            #company_info, #about_us, #services, #contact_us {
-                margin: 20px;
-            }
-
-            #about_us, #services {
-                padding: 30px 20px;
-            }
-
-            .valeurs, .sliderServicesV2 {
-                flex-direction: column;
-            }
-
-            .valeurs li, .sliderServicesV2 .cell {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-
-            #about_us.cl-3-15.center.mb8p.cl-1-17-m {
-                margin: 20px !important;
-            }
-
-            #about_us .valeurs.flexBetween {
-                flex-direction: column !important;
-            }
-
-            #about_us .valeurs.flexBetween > li {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin-bottom: 40px !important;
-            }
-
-            #services.cl-3-15.center.mb8p.cl-1-17-m {
-                margin: 20px !important;
-            }
-
-            #services .sliderServicesV2.flexBetween {
-                flex-direction: column !important;
-            }
-
-            #services .sliderServicesV2.flexBetween .cell {
-                width: 100% !important;
-                max-width: 100% !important;
-                margin-bottom: 20px !important;
-            }
-
-            #services .sliderServicesV2.flexBetween .cell img {
-                display: block !important;
-                margin: 0 auto !important;
-            }
-
-            #company_info.cl-3-15.center.mb8p.cl-1-17-m {
-                margin: 20px !important;
-            }
-
-            #company_info .image-container {
-                margin-top: 40px !important;
-            }
-
-            #company_info .text-container {
-                text-align: left !important; /* Keep left alignment for smartphones */
-                margin-top: 30px !important;
-            }
-
-            #contact_us.cl-3-15.center.mb8p.cl-1-17-m {
-            margin: 20px !important;
-            }
-
-            #contact_us .image-container {
-                margin-top: 30px !important;
-            }
-
-            #contact_us .image-container img {
-                border-radius: 10px !important;
-            }
-
-            #contact_us div[style*="flex: 1; color: goldenrod;"] {
-            margin-top: 30px !important;
-            font-size: 14px !important;
-        }
-
-            #contact_us .nav-item.nav-link.btn.rounded-pill {
-                font-size: 12px !important;
-                padding: 8px 15px !important;
-            }
-        }
-
         .value-card {
         transition: transform 0.3s ease-in-out;
         cursor: pointer;
@@ -316,7 +112,7 @@
         <div id="react-app"></div>
     </div>
 
-    <div style="position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); height: 600px; border-radius: 20px;">
+    <div id="about_us" style="position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); height: 600px; border-radius: 20px;">
         <div style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-radius: 20px;">
             <img src="{% static 'bed.jpeg' %}" alt="picture" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
         </div>
@@ -327,8 +123,8 @@
         </div>
     </div>
     
-    <div style="padding-bottom: 50px; padding-top: 50px;">
-        <div id="about_us" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
+    <div id=values" style="padding-bottom: 50px; padding-top: 50px;">
+        <div  class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
             <h1 class="text-center" style="font-weight: bold;">{{ page.about_us_section_title }}</h1>
             <ul class="valeurs flexBetween" style="display: flex; justify-content: space-around; list-style: none; padding: 0; margin-top: 80px;">
                 <li class="value-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
@@ -351,8 +147,8 @@
         </div>
     </div>
 
-    <div style="background-color: #f9f9f9; padding-bottom: 50px; padding-top: 50px;">
-        <div id="services" class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
+    <div id="services" style="background-color: #f9f9f9; padding-bottom: 50px; padding-top: 50px;">
+        <div class="cl-3-15 center mb8p cl-1-17-m" style="margin-left: 100px; margin-right: 100px; margin-bottom: 100px; margin-top: 100px;">
             <h1 class="text-center" style="font-weight: bold;">{{ page.services_section_title }}</h1>
             <div class="custom-richtext" style="margin-top: 80px; color: goldenrod; text-align: center;">
                 {{ page.services_section_text|richtext }}
@@ -390,7 +186,7 @@
         </div>
     </div>
 
-    <div style="padding-bottom: 50px; padding-top: 50px; position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
+    <div id="contact_us" style="padding-bottom: 50px; padding-top: 50px; position: relative; width: 100%; height: 0; padding-bottom: 56.25%;">
         <img src="{% static 'menage.jpeg' %}" alt="Office image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(to right, 
             rgba(255,255,255,0) 40%, 
