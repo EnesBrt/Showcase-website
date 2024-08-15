@@ -68,7 +68,6 @@
         .service-card:hover {
             transform: scale(1.05);
         }
-        
 
         /* Ajustements généraux pour la réactivité */
         .rich-text-content {
@@ -85,6 +84,253 @@
         word-wrap: break-word;
         }
 
+        /* Media query pour les smartphones (480px - 767px) */
+        @media screen and (max-width: 767px) {
+        #landing {
+        padding: 15px;
+        }
+
+        #landing h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        }
+
+        #about_us {
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        
+        #about_us .about-us-image,
+        #about_us .about-us-text {
+            position: static !important;
+            width: 100% !important;
+        }
+        
+        #about_us .about-us-image {
+            height: 300px !important;
+            order: 1 !important;
+        }
+        
+        #about_us .about-us-text {
+            padding: 20px 0 !important;
+            order: 2 !important;
+        }
+        
+        #about_us .rich-text-content {
+            max-width: 90% !important;
+        }
+
+        #values {
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+        
+        #values .cl-3-15 {
+            margin: 50px 20px !important;
+        }
+        
+        #values h1 {
+            font-size: 24px;
+        }
+        
+        #values .valeurs {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        #values .value-card {
+            width: 90% !important;
+            margin: 0 0 30px 0 !important;
+            padding: 15px !important;
+        }
+        
+        #values .value-card img {
+            width: 100px;
+            height: 100px;
+        }
+        
+        #values .value-card .ft18 {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        
+        #values .value-card .rich-text-content {
+            font-size: 14px;
+        }
+
+        #services .cl-3-15 {
+            margin: 20px 5px !important;
+        }
+
+        #services h1 {
+            font-size: 18px;
+        }
+
+        #services .custom-richtext {
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        #services .w100.hidden-m {
+            position: relative;
+            height: 90vw; /* Hauteur basée sur la largeur de l'écran */
+            margin-top: 15px;
+        }
+
+        #services .sliderServicesV2 {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        #services .sliderServicesV2:first-child {
+            left: 0;
+        }
+
+        #services .sliderServicesV2:last-child {
+            right: 0;
+        }
+
+        #services .service-card {
+            width: 100%;
+            height: 30%;
+            margin: 0;
+            padding: 5px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #services .service-card img {
+            width: 30px;
+            height: auto;
+        }
+
+        #services .service-card p {
+            font-size: 7px;
+            margin-top: 2px;
+            text-align: center;
+        }
+            
+        }
+
+        /* Media query pour les tablettes */
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+        #landing {
+        padding: 30px;
+        }
+
+        #landing h1 {
+        font-size: 2.2em;
+        margin-bottom: 25px;
+        }
+
+        #react-app {
+        max-width: 960px;
+        }
+
+        #about_us {
+            height: 500px !important;
+        }
+        
+        #about_us .rich-text-content {
+            max-width: 90% !important;
+        }
+
+        #values {
+            padding-bottom: 40px;
+            padding-top: 40px;
+        }
+        
+        #values .cl-3-15 {
+            margin: 70px 50px !important;
+        }
+        
+        #values h1 {
+            font-size: 28px;
+        }
+        
+        #values .valeurs {
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        #values .value-card {
+            width: 70% !important;
+            margin: 0 0 40px 0 !important;
+            padding: 20px !important;
+        }
+        
+        #values .value-card img {
+            width: 120px;
+            height: 120px;
+        }
+        
+        #values .value-card .ft18 {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        
+        #values .value-card .rich-text-content {
+            font-size: 16px;
+        }
+
+        #services .cl-3-15 {
+            margin: 40px 20px !important;
+        }
+
+        #services h1 {
+            font-size: 24px;
+        }
+
+        #services .custom-richtext {
+            margin-top: 30px;
+            font-size: 16px;
+        }
+
+        #services .w100.hidden-m {
+            margin-top: 30px;
+        }
+
+        #services .sliderServicesV2 {
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        #services .service-card {
+            width: calc(33.33% - 10px);
+            aspect-ratio: 1 / 1;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #services .service-card img {
+            width: 80px;
+            height: auto;
+        }
+
+        #services .service-card p {
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        
+        }
+
     </style>
     
     <div id="landing">
@@ -94,11 +340,11 @@
         <div id="react-app"></div>
     </div>
 
-    <div id="about_us" style="position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); height: 600px; border-radius: 20px;">
-        <div style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-radius: 20px;">
+    <div id="about_us" class="about-us-section" style="position: relative; overflow: hidden; width: 100vw; margin-left: calc(-50vw + 50%); height: 600px; border-radius: 20px;">
+        <div class="about-us-image" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-radius: 20px;">
             <img src="{% static 'bed.jpeg' %}" alt="picture" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
         </div>
-        <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background-color: white; display: flex; justify-content: center; align-items: center; border-radius: 20px;">
+        <div class="about-us-text" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background-color: white; display: flex; justify-content: center; align-items: center; border-radius: 20px;">
             <div class="rich-text-content" style="text-align: center; padding: 20px; max-width: 80%;">
                 {{ page.our_company_text|richtext }}
             </div>
