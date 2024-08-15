@@ -174,33 +174,20 @@
         }
 
         #services .w100.hidden-m {
-            position: relative;
-            height: 90vw; /* Hauteur basée sur la largeur de l'écran */
             margin-top: 15px;
         }
 
         #services .sliderServicesV2 {
-            position: absolute;
-            top: 0;
-            width: 50%;
-            height: 100%;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             justify-content: space-between;
-        }
-
-        #services .sliderServicesV2:first-child {
-            left: 0;
-        }
-
-        #services .sliderServicesV2:last-child {
-            right: 0;
+            margin-bottom: 10px;
         }
 
         #services .service-card {
-            width: 100%;
-            height: 30%;
-            margin: 0;
+            width: calc(33.33% - 4px);
+            aspect-ratio: 1 / 1;
+            margin-bottom: 6px;
             padding: 5px;
             box-sizing: border-box;
             display: flex;
@@ -215,9 +202,53 @@
         }
 
         #services .service-card p {
-            font-size: 7px;
-            margin-top: 2px;
+            font-size: 8px;
+            margin-top: 3px;
             text-align: center;
+        }
+
+        #contact_us {
+            padding-bottom: 0 !important;
+            height: auto !important;
+            overflow: hidden !important;
+        }
+
+        #contact_us > img {
+            position: relative !important;
+            height: 120px !important;
+            object-fit: cover !important;
+            object-position: center !important;
+        }
+
+        #contact_us > div:nth-child(2) {
+            display: none !important;
+        }
+
+        #contact_us > div:last-child {
+            position: relative !important;
+            top: -20px !important;
+            right: auto !important;
+            transform: none !important;
+            width: 80% !important;
+            margin: 0 auto !important;
+            padding: 10px !important;
+            box-shadow: 0 -5px 10px rgba(0,0,0,0.1) !important;
+        }
+
+        #contact_us h1 {
+            font-size: 16px !important;
+            margin-bottom: 5px !important;
+        }
+
+        #contact_us .rich-text-content {
+            font-size: 10px !important;
+            margin-top: 5px !important;
+        }
+
+        #contact_us .btn {
+            font-size: 12px !important;
+            padding: 5px 10px !important;
+            margin-top: 10px !important;
         }
             
         }
@@ -327,8 +358,65 @@
             margin-top: 10px;
             text-align: center;
         }
-
         
+        #contact_us {
+            padding-bottom: 60% !important; /* Augmenté à 60% pour une section beaucoup plus grande */
+            position: relative !important;
+        }
+
+        #contact_us > img {
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+
+        #contact_us > div:nth-child(2) {
+            background-image: linear-gradient(to right, 
+                rgba(255,255,255,0) 10%, 
+                rgba(255,255,255,0.7) 30%, 
+                rgba(255,255,255,1) 50%, 
+                rgba(255,255,255,1) 100%
+            ) !important;
+        }
+
+        #contact_us > div:last-child {
+            position: absolute !important;
+            top: 50% !important;
+            right: 5% !important;
+            transform: translateY(-50%) !important;
+            width: 50% !important; /* Augmenté à 50% pour un cadre plus large */
+            height: 80% !important; /* Fixé à 80% de la hauteur de la section */
+            max-height: none !important; /* Supprimé la limite de hauteur maximale */
+            overflow-y: auto !important;
+            padding: 30px !important; /* Augmenté pour plus d'espace intérieur */
+            box-shadow: 0 0 25px rgba(0,0,0,0.15) !important;
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+        }
+
+        #contact_us h1 {
+            font-size: 28px !important; /* Augmenté pour un titre plus imposant */
+            margin-bottom: 20px !important;
+        }
+
+        #contact_us .rich-text-content {
+            font-size: 16px !important; /* Augmenté pour une meilleure lisibilité */
+            line-height: 1.6 !important;
+            margin-top: 20px !important;
+            margin-bottom: 30px !important; /* Ajouté pour plus d'espace avant le bouton */
+        }
+
+        #contact_us .btn {
+            font-size: 18px !important; /* Augmenté pour un bouton plus visible */
+            padding: 12px 24px !important;
+            margin-top: 20px !important;
+            width: 70% !important; /* Ajusté pour un meilleur aspect */
+            display: block !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+                
         }
 
     </style>
